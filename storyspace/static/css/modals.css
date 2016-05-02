@@ -1,0 +1,29 @@
+div.modal {
+    font-family: Montserrat, sans-serif;
+
+    background-color: rgba(0, 0, 0, 0.66);
+    color: white;
+
+    border: 0;
+}
+
+div.modal:focus{
+    outline: none;
+}
+
+div.modal .button {
+    color: black;
+    background-color: white;
+}
+
+div.modal .button:hover {
+    opacity: 0.66;
+}
+
+div#location-modal h4 {
+    font-family: Montserrat, sans-serif;
+}
+
+div#share-story-modal {
+    color: white;
+}

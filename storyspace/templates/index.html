@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
+        <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Neuton:400,200,300,400italic,800,700' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="{{ url_for('assets', filepath='css/vendor/foundation.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('assets', filepath='css/vendor/leaflet.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('assets', filepath='css/vendor/animate.css') }}" />
+
+        <link rel="stylesheet" href="{{ url_for('assets', filepath='css/category-colors.css') }}">
+        <link rel="stylesheet" href="{{ url_for('assets', filepath='css/structure.css') }}">
+        <link rel="stylesheet" href="{{ url_for('assets', filepath='css/topbar.css') }}">
+        <link rel="stylesheet" href="{{ url_for('assets', filepath='css/modals.css') }}">
+        <link rel="stylesheet" href="{{ url_for('assets', filepath='css/map.css') }}">
+        <link rel="stylesheet" href="{{ url_for('assets', filepath='css/list.css') }}">
+
+        <title>Story Space</title>
+    </head>
+    <body>
+        <div id="app-wrapper" data-sticky-container>
+            <div id="app-structure-container">
+                <div id="app-frame-container" style="background-color:gray;">
+                    <div id="frame-map" class="frame" shunt-frame>
+                    </div>
+                    <div id="frame-list" class="frame" shunt-frame>
+                        <div class="row">
+                            <div class="column small-12" id="story-container">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="app-topbar" class="title-bar" data-sticky data-options="marginTop:0;" style="width:100%" data-top-anchor="1">
+                <div class="title-bar-left">
+                    <ul id="dropdown-menu-modals" class="dropdown menu" data-dropdown-menu>
+                        <li>
+                            <a id="modal-menu-button" class="button">Story Space</a>
+                            <ul id="modal-menu" class="menu">
+                                <li><a>About</a></li>
+                                <li><a>Tutorial</a></li>
+                                <li><a>Resources</a></li>
+                                <li><a>Contact</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="title-bar-right">
+                    <div class="row">
+                        <span>View:</span>
+                        <span id="frame-toggle"><a id="frame-map" class="">MAP</a><a id="frame-list" class="">LIST</a></span>
+
+                        <span>Filter Stories:</span>
+                        <a id="ethnicity" class="category bg-color border-color ethnicity topbar-button">Ethnicity</a>
+                        <a id="gender" class="category bg-color border-color gender topbar-button">Gender</a>
+                        <a id="sexuality" class="category bg-color border-color sexuality topbar-button">Sexuality</a>
+                        <a id="social-class" class="category bg-color border-color social-class topbar-button">Social Class</a>
+
+                        <a id="show-all" class="topbar-button white-hollow">Show All</a>
+                        <span>&#124;</span>
+                        <a id="share" class="topbar-button white-filled" data-open="share-story-modal">Share Your Story</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="reveal modal" id="location-modal" data-reveal>
+            <button class="close-button" data-close>
+                <span>&times;</span>
+            </button>
+            <h4>Location</h4>
+            <article> This is a safe space for you to share your story. Each universe contains real stories about real experiences.
+                <br>
+                <br> In order to provide the best experience for you and for your readers, we ask that you share your location with us.
+                <br>
+                <br> Do you want to share your location with us? (Don't worry you can still use the site if you choose not to!)
+            </article>
+            <hr/>
+            <div id="share-location-prompt">
+                <span id="yes" class="tiny button" data-close>Yes, I would like to share my location.</span>
+                <span id="no" class="tiny button" data-close>No, I do not want to share my location.</span>
+            </div>
+        </div>
+
+        <div class="reveal modal" id="share-story-modal" data-reveal>
+            <button class="close-button" data-close>
+                <span>&times;</span>
+            </button>
+            <form name="share" id="share-form" enctype="multipart/form-data" method="post">
+                <fieldset>
+                    <legend>Which categories does your story belong in?</legend>
+                    <input type="checkbox" name="category" value="ethnicity"> Ethnicity &nbsp;
+                    <input type="checkbox" name="category" value="gender"> Gender &nbsp;
+                    <input type="checkbox" name="category" value="sexuality"> Sexuality &nbsp;
+                    <input type="checkbox" name="category" value="social_class"> Social Class &nbsp;
+                </fieldset>
+                <input type="text" name="title" placeholder="Title" id="title-input">
+                <input type="text" name="author" placeholder="Name (optional)" id="name-input">
+                <textarea name="content" placeholder="Your Story" rows="4"></textarea>
+
+                <hr/>
+                <span>Upload image (optional):</span>
+
+                <input type="file" name="image" id="image">
+                <br>
+                <br>
+                <input type="hidden" name="latitude" placeholder="" id="latitude">
+                <input type="hidden" name="longitude" placeholder="" id="longitude">
+            </form>
+            <a class="tiny button" id="share-form-submit">Share</a>
+        </div>
+
+        {% raw %}
+        <script type="x-tmpl-mustache" id="template-map-marker-story">
+            <div class="map-marker-story">
+                <strong>{{ title }}</strong>
+                <br/>
+                <p>{{ content }}</p>
+                <em>
+                {{ #author }}{{ author }}{{ /author }}
+                {{ ^author }}anonymous{{ /author }}
+                </em>
+                {{#image_url}}<hr/><img class="storyimage" src="{{image_url}}">{{ /image_url }}
+            </div>
+        </script>
+
+        <script type="x-tmpl-mustache" id="template-listed-story">
+            <div class="listed-story-wrapper grid-item'">
+                <div class="listed-story">
+                    <div class="row">
+                        <div class="story-icon column small-2">
+                        </div>
+                        <div class="column small-10">
+                            <strong>{{ title }}</strong><br/>
+                            <span>by<em>
+                            {{ #author }}{{ author }}{{ /author }}
+                            {{ ^author }}anonymous{{ /author }}
+                            </em></span><br/>
+                            <span>{{ created_on_text }}</span>
+                        </div>
+                    </div>
+
+
+                    <br/><br/>
+                    {{#image_url}}<hr/><img class="storyimage" src="{{image_url}}"><br/>{{ /image_url }}
+                    <p>{{ content }}</p>
+                </div>
+            </div>
+        </script>
+        {% endraw %}
+
+        <script src="{{ url_for('assets', filepath='js/vendor/jquery.min.js') }}"></script>
+        <script src="{{ url_for('assets', filepath='js/vendor/jquery-ui.js') }}"></script>
+        <script src="{{ url_for('assets', filepath='js/vendor/foundation.js') }}"></script>
+        <script src="{{ url_for('assets', filepath='js/vendor/imagesloaded.pkgd.min.js') }}"></script>
+        <script src="{{ url_for('assets', filepath='js/vendor/masonry.pkgd.min.js') }}"></script>
+        <script src="{{ url_for('assets', filepath='js/vendor/leaflet.js') }}"></script>
+        <script src="{{ url_for('assets', filepath='js/vendor/mustache.js') }}"></script>
+        <script src="{{ url_for('assets', filepath='js/vendor/shuntdiv.js') }}"></script>
+
+        <script src="{{ url_for('assets', filepath='js/shunts.js') }}"></script>
+        <script src="{{ url_for('assets', filepath='js/story-icon.js') }}"></script>
+        <script src="{{ url_for('assets', filepath='js/stories.js') }}"></script>
+        <script src="{{ url_for('assets', filepath='js/geolocation.js') }}"></script>
+        <script src="{{ url_for('assets', filepath='js/map.js') }}"></script>
+        <script src="{{ url_for('assets', filepath='js/list.js') }}"></script>
+        <script src="{{ url_for('assets', filepath='js/interfaces.js') }}"></script>
+        <script src="{{ url_for('assets', filepath='js/app.js') }}"></script>
+    </body>
+</html>

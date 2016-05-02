@@ -1,0 +1,88 @@
+div#app-topbar {
+    font-family: Montserrat, sans-serif;
+    font-size: 0.8em;
+
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+div#app-topbar div.title-bar-right {
+    margin-top: 0.6em;
+}
+
+div#app-topbar span#frame-toggle {
+    margin-right: 4em;
+    border: 2px solid white;
+    padding: 4px 2px 4px 2px;
+}
+
+div#app-topbar span#frame-toggle a {
+    background-color: rgba(255, 255, 255, 0.0);
+    color: white;
+    padding: 2px 6px 2px 6px;
+    text-align: center;
+}
+
+div#app-topbar span#frame-toggle a.selected {
+    background-color: rgba(255, 255, 255, 1.0);
+    color: black;
+}
+
+div#app-topbar a.topbar-button {
+    padding: 4px 6px 4px 6px;
+    border-width: 2px;
+    border-style: solid;
+}
+
+div#app-topbar a.topbar-button.white-hollow {
+    background-color: transparent;
+    color: white;
+    border-color: white;
+}
+
+div#app-topbar a.topbar-button.white-filled {
+    background-color: white;
+    color: black;
+    border-color: white;
+}
+
+div#app-topbar a.topbar-button.category {
+    color: black;
+}
+
+div#app-topbar a.topbar-button:hover {
+    transition: opacity 200ms;
+    opacity: 0.66;
+}
+
+div#app-topbar a.topbar-button.category.selected {
+    transition: opacity 200ms;
+    opacity: 0.33;
+}
+
+div#app-topbar a.topbar-button.category.selected:hover {
+    transition: opacity 200ms;
+    opacity: 0.66;
+}
+
+a.button#modal-menu-button {
+    background-color: #111111;
+}
+
+a.button#modal-menu-button::after {
+    border-color: white transparent transparent;
+}
+
+ul.menu#modal-menu {
+    background-color: black;
+}
+
+ul.menu#modal-menu a {
+    color: white;
+}
+
+ul.menu#modal-menu a:hover {
+    opacity: 0.66;
+}

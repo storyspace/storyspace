@@ -57,7 +57,9 @@ docs/_build/
 # PyBuilder
 target/
 
+# Mockups
+mockups/
+
 # Application
 app.db
 secrets.py
-

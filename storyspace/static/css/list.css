@@ -1,0 +1,30 @@
+div#frame-list {
+    background-color: #111111;
+
+    overflow-y: scroll;
+    height: 100%;
+}
+
+div.listed-story-wrapper {
+    width: 32%;
+    padding: 1em;
+
+    display: inline-block;
+}
+
+div.listed-story {
+    background-color: #222222;
+    color: white;
+
+    padding: 1em;
+
+    font-family: Neuton, serif;
+}
+
+div.listed-story div.story-icon {
+    padding: 1em;
+}
+
+div.listed-story div.story-icon svg {
+    width: 100%;
+}
