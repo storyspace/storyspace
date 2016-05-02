@@ -68,3 +68,5 @@ During our second meeting, we re-mapped our site and focused on interaction deta
 
 During our last meeting, we focused on design details. We created a mockup of our new top navigation, which includes a drop-down menu and a toggle button (to switch between a list view and a map view). We also created a mockup for the Tutorial page, to be inserted in the drop-down menu. This tutorial page functions to teach users how to use the features on our website. 
 
+Throughout the week, we discussed the technical implications of our design changes with Kelvin, our CS helper. We decided that because our code, up until this point, has been constructed in layers (with changes being added without taking into consideration the entire structure), it would be most reasonable to rebuild the website. Having now detailed out all the design and functional elements of the website, the code will reflect better organization and will work cohesively, rather than separately. At our last meeting, Kelvin began the process of rebuilding by creating a new repository on Github. 
+
