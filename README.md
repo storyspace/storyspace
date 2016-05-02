@@ -62,7 +62,7 @@ We researched various resources (based off of feedback from our audience testing
 
 This week, we focused primarily on re-organizing and re-mapping Story Space. From the past couple weeks, we realized that we were constantly running into design and coding complications. There were many questions that had been left unanswered in terms of specific interactions and features, and that hindered our ability to make progress with the website. 
 
-During our first meeting of the week, we compiled a list of questions and clarifications, and discussed possible solutions. We drafted a new "to-do" list and re-organized our timeline.
+During our first meeting of the week, we compiled a list of questions and clarifications, and discussed possible solutions. We drafted a new "to-do" list for the rest of the week.
 
 During our second meeting, we re-mapped our site and focused on interaction details. We created an "action map" for ourselves that shows the different options users will have on the two different interfaces. We also sketched out rough wireframes for each "page" of our website.
 
