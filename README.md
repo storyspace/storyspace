@@ -58,4 +58,13 @@ We finalized the design for the list view layout of the story after making small
 
 We researched various resources (based off of feedback from our audience testing from des 157) to provide help to users who go to story space and want to seek help or are interested in taking action after reading stories (because they feel empowered).
 
+# Week 6
+
+This week, we focused primarily on re-organizing and re-mapping Story Space. From the past couple weeks, we realized that we were constantly running into design and coding complications. There were many questions that had been left unanswered in terms of specific interactions and features, and that hindered our ability to make progress with the website. 
+
+During our first meeting of the week, we compiled a list of questions and clarifications, and discussed possible solutions. We drafted a new "to-do" list and re-organized our timeline.
+
+During our second meeting, we re-mapped our site and focused on interaction details. We created an "action map" for ourselves that shows the different options users will have on the two different interfaces. We also sketched out rough wireframes for each "page" of our website.
+
+During our last meeting, we focused on design details. We created a mockup of our new top navigation, which includes a drop-down menu and a toggle button (to switch between a list view and a map view). We also created a mockup for the Tutorial page, to be inserted in the drop-down menu. This tutorial page functions to teach users how to use the features on our website. 
 
