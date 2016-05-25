@@ -64,7 +64,7 @@ function bind_interfaces(shunts, stories, map, locator, list) {
 
     document.addEventListener('stories-new', function(event) {
         map.makeMarker(event.detail);
-        list.makeCard(event.detail);
+        list.makeCard(event.detail, true);
         map.showStories([event.detail], stories.categories);
         list.showStories([event.detail], stories.categories);
         list.masonry();

@@ -3,7 +3,7 @@ storyspaceStories = (function(){
         this.endpoint = options.endpoint;
         this.csrftoken = options.csrftoken;
         this.stories = [];
-        this.allCategories = ['ethnicity', 'gender', 'sexuality', 'social-class'];
+        this.allCategories = ['ethnicity', 'gender', 'sexuality', 'social_class'];
         this.categories = this.allCategories.slice();
     };
 

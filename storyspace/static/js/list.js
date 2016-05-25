@@ -21,11 +21,12 @@ storyspaceList = (function(){
         for (i in stories) this.makeCard(stories[i]);
     };
 
-    storyspaceList.prototype.makeCard = function(story) {
+    storyspaceList.prototype.makeCard = function(story, beforeDOM) {
         story.created_on_text = timestamp_text(story.created_on);
         card = story.cardElem = $(Mustache.render(this.card_template, story));
         $('div.story-icon', card).html(make_story_icon(10, story.categories));
-        this.listElem.append(card).masonry('appended', card);
+        if (beforeDOM) { this.listElem.prepend(card).masonry('prepended', card); }
+        else { this.listElem.append(card).masonry('appended', card); }
     };
 
     storyspaceList.prototype.showStories = function(stories, categories) {
@@ -40,8 +41,6 @@ storyspaceList = (function(){
                         show = true;
                         break;
                     }
-
-            console.log(show, story.cardElem);
 
             if (show) {
                 story.cardElem.show();

@@ -9,7 +9,7 @@ CATEGORIES      = {
     'ethnicity':    'Ethnicity',
     'gender':       'Gender',
     'sexuality':    'Sexuality',
-    'social-class': 'Social Class',
+    'social_class': 'Social Class',
 }
 TITLE_MAX_LEN   = 256
 AUTHOR_MAX_LEN  = 64

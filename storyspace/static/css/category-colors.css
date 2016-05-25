@@ -10,7 +10,7 @@
     background-color: #51d1ed;
 }
 
-.category.bg-color.social-class {
+.category.bg-color.social_class {
     background-color: #ff9c48;
 }
 
@@ -26,7 +26,7 @@
     border-color: #51d1ed;
 }
 
-.category.border-color.social-class {
+.category.border-color.social_class {
     border-color: #ff9c48;
 }
 
@@ -42,7 +42,7 @@
     color: #51d1ed;
 }
 
-.category.color.social-class {
+.category.color.social_class {
     color: #ff9c48;
 }
 
@@ -58,6 +58,6 @@ svg.story_icon .sexuality {
     fill: #51d1ed;
 }
 
-svg.story_icon .social-class {
+svg.story_icon .social_class {
     fill: #ff9c48;
 }
