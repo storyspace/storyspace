@@ -11,6 +11,10 @@ div.modal:focus{
     outline: none;
 }
 
+div.modal h1, div.modal h2, div.modal h3, div.modal h4, div.modal h5, div.modal h6 {
+    font-family: Montserrat, sans-serif;
+}
+
 div.modal .button {
     color: black;
     background-color: white;
@@ -20,10 +24,56 @@ div.modal .button:hover {
     opacity: 0.66;
 }
 
+div.modal.eighty-wide {
+    width: 80%;
+}
+
+div.modal.bg-gray {
+    background-color: #111111;
+}
+
 div#location-modal h4 {
     font-family: Montserrat, sans-serif;
 }
 
 div#share-story-modal {
     color: white;
+}
+
+div#about-modal span.team-section {
+    width: 10em;
+    float: left;
+    margin-right: 4em;
+}
+
+div#about-modal span.team-title {
+    font-weight: bold;
+}
+
+div#resources-modal div.resources {
+    width: 100%;
+    overflow: auto;
+    margin-bottom: 1em;
+}
+
+div#resources-modal div.resource {
+    display: inline-block;
+    width: 20em;
+}
+
+div#resources-modal div.resource.left {
+    float: left;
+}
+
+div#resources-modal div.resource.right {
+    float: right;
+}
+
+div#resources-modal div.icon.resource_icon {
+    display: inline-block;
+    float: left;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    margin-right: 1em;
 }

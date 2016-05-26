@@ -40,10 +40,9 @@
                         <li>
                             <a id="modal-menu-button" class="button">Story Space</a>
                             <ul id="modal-menu" class="menu">
-                                <li><a>About</a></li>
-                                <li><a>Tutorial</a></li>
-                                <li><a>Resources</a></li>
-                                <li><a>Contact</a></li>
+                                <li><a data-open="about-modal">About</a></li>
+                                <li><a data-open="tutorial-modal">Tutorial</a></li>
+                                <li><a data-open="resources-modal">Resources</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -57,12 +56,107 @@
                         <a id="ethnicity" class="category bg-color border-color ethnicity topbar-button">Ethnicity</a>
                         <a id="gender" class="category bg-color border-color gender topbar-button">Gender</a>
                         <a id="sexuality" class="category bg-color border-color sexuality topbar-button">Sexuality</a>
-                        <a id="social-class" class="category bg-color border-color social-class topbar-button">Social Class</a>
+                        <a id="social_class" class="category bg-color border-color social_class topbar-button">Social Class</a>
 
                         <a id="show-all" class="topbar-button white-hollow">Show All</a>
                         <span>&#124;</span>
                         <a id="share" class="topbar-button white-filled" data-open="share-story-modal">Share Your Story</a>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="reveal modal eighty-wide bg-gray" id="tutorial-modal" data-reveal>
+            <button class="close-button" data-close>
+                <span>&times;</span>
+            </button>
+            <h1>TUTORIAL</h1>
+        </div>
+
+        <div class="reveal modal eighty-wide bg-gray" id="about-modal" data-reveal>
+            <button class="close-button" data-close>
+                <span>&times;</span>
+            </button>
+            <h1>ABOUT</h1>
+            <p>
+                "Story Space" seeks to generate a culture of compassion and love for people
+                of different backgrounds and preferences. Through personal stories, we hope
+                that this platform will educate, empower and inspire change.
+            </p>
+            <h4>Background</h4>
+            <hr/>
+            <p>
+                Racism, homophobia, sexism, classism are just a few of the long list of forms of prejudice that
+                people still experience today. Although we recognize the strides society has made in fighting for
+                equality, it is undeniable that discrimination still exists. Everyday, people face prejudices and
+                everyday, people lose themselves, their lives and their loved ones, to hateful words and actions. In
+                lieu of the anger and pain we have witnessed these past years, we recognize the need to root
+                activism for equality in love, rather than in anger, bitterness, sympathy or ignorance.
+            </p>
+            <h4>Contact the Team</h4>
+            <hr/>
+            <div>
+                <span class="team-section">
+                    <span class="team-title">Designers</span><br/>
+                    Tiffany Choi<br/>
+                    Alicia Tang
+                </span>
+                <span class="team-section">
+                    <span class="team-title">Programmers</span><br/>
+                    Kelvin Lu
+                </span>
+            </div>
+        </div>
+
+        <div class="reveal modal eighty-wide bg-gray" id="resources-modal" data-reveal>
+            <button class="close-button" data-close>
+                <span>&times;</span>
+            </button>
+            <h1>RESOURCES</h1>
+            <p>
+                If you need help or want to help, here are some useful resources to check out.
+            </p>
+            <div class="resources">
+                <div class="resource left">
+                    <a class="huge button expanded">GenderSpectrum.org</a>
+                    <p>
+                        Gender Spectrum helps to create gender
+                        sensitive and inclusive environments
+                        for all children and teens.
+                    </p>
+                    <div class="icon resource_icon category bg-color gender"></div>
+                    <div class="icon resource_icon category bg-color sexuality"></div>
+                </div>
+                <div class="resource right">
+                    <a class="huge button expanded">Change.org</a>
+                    <p>
+                        The world’s platform for change.
+                    </p>
+                    <div class="icon resource_icon category bg-color ethnicity"></div>
+                    <div class="icon resource_icon category bg-color gender"></div>
+                    <div class="icon resource_icon category bg-color sexuality"></div>
+                    <div class="icon resource_icon category bg-color social_class"></div>
+                </div>
+            </div>
+            <div class="resources">
+                <div class="resource left">
+                    <a class="huge button expanded">Hotline.org</a>
+                    <p>
+                        The national domestic abuse hotline.
+                    </p>
+                    <div class="icon resource_icon category bg-color gender"></div>
+                    <div class="icon resource_icon category bg-color sexuality"></div>
+                </div>
+                <div class="resource right">
+                    <a class="huge button expanded">TheRepresentationProject.org</a>
+                    <p>
+                        Films regarding stereotypes of gender,
+                        race, class, and sexuality
+                    </p>
+                    <div class="icon resource_icon category bg-color ethnicity"></div>
+                    <div class="icon resource_icon category bg-color gender"></div>
+                    <div class="icon resource_icon category bg-color sexuality"></div>
+                    <div class="icon resource_icon category bg-color social_class"></div>
                 </div>
             </div>
         </div>
@@ -85,13 +179,14 @@
             </div>
         </div>
 
-        <div class="reveal modal" id="share-story-modal" data-reveal>
+        <div class="reveal modal eighty-wide bg-gray" id="share-story-modal" data-reveal>
             <button class="close-button" data-close>
                 <span>&times;</span>
             </button>
+            <h1>SHARE YOUR STORY</h1>
             <form name="share" id="share-form" enctype="multipart/form-data" method="post">
                 <fieldset>
-                    <legend>Which categories does your story belong in?</legend>
+                    <legend>Which category does your story fit in? (Check all that apply)</legend>
                     <input type="checkbox" name="category" value="ethnicity"> Ethnicity &nbsp;
                     <input type="checkbox" name="category" value="gender"> Gender &nbsp;
                     <input type="checkbox" name="category" value="sexuality"> Sexuality &nbsp;
@@ -101,7 +196,6 @@
                 <input type="text" name="author" placeholder="Name (optional)" id="name-input">
                 <textarea name="content" placeholder="Your Story" rows="4"></textarea>
 
-                <hr/>
                 <span>Upload image (optional):</span>
 
                 <input type="file" name="image" id="image">

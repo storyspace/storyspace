@@ -4,7 +4,7 @@ function make_story_icon(r, categories) {
     x1 = 2 * r;
     y1 = r;
 
-    svg_string = '<svg class="story_icon" viewBox="0 0 ' + x1 + ' ' + x1 + '">';
+    svg_string = '<svg class="icon story_icon" viewBox="0 0 ' + x1 + ' ' + x1 + '">';
 
     if (categories.length > 1) {
         for (i = 0; i < categories.length; ++i) {
