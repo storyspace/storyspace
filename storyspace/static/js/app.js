@@ -20,7 +20,7 @@ $(document).ready(function() {
     });
 
     map = new storyspaceMap(mapElem, {
-        tile_url: 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}',
+        tile_url: 'https://api.mapbox.com/styles/v1/tiffachoi/cione600e0025apnkn38mh58c/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoidGlmZmFjaG9pIiwiYSI6ImNpbGphMGc4NTRiNmZ1dG0wMG5zMzFsMWIifQ.M8zCDPQqnFfczyJc79VMDQ',
         tile_options: {
             maxZoom: 15,
             id: 'tiffachoi.pbn9d7d4',

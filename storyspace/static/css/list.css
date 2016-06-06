@@ -13,12 +13,27 @@ div.listed-story-wrapper {
 }
 
 div.listed-story {
-    background-color: #222222;
-    color: white;
-
+    background-color: white;
+    
     padding: 1em;
 
-    font-family: Neuton, serif;
+    font-family: Montserrat, sans-serif;
+}
+
+div.listed-story h1{
+    font-family:Montserrat;
+    font-weight:700;
+    font-size:20px;
+}
+
+div.listed-story h4{
+    font-family:Montserrat;
+    font-size:.7em;
+}
+div.listed-story p{
+    font-family:Neuton, serif;
+    font-size:1em;
+    line-height: 1.3em;
 }
 
 div.listed-story div.story-icon {
