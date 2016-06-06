@@ -27,7 +27,7 @@ div.modal h4{
 }
 
 div.modal article, div.modal p{
-    font-size:.7em;
+    font-size:.8em;
     font-weight:400;
 }
 
@@ -41,7 +41,7 @@ div.modal .button:hover {
 }
 
 div.modal.eighty-wide {
-    width: 65%;
+    width: 55%;
 }
 
 div.modal.bg-gray {
@@ -59,7 +59,6 @@ div#share-story-modal {
 
 ul#modal-menu.menu {
     border:none;
-    background-color:#1B1B1B;
 
 }
 div#about-modal span.team-section {
@@ -83,7 +82,7 @@ div#resources-modal div.resources {
 
 div#resources-modal div.resource {
     display: inline-block;
-    width: 20em;
+    width: 270px;
 }
 
 div#resources-modal div.resource.left {

@@ -16,6 +16,11 @@ div#app-topbar {
 div#app-topbar div.title-bar-right {
     margin-top: 0.5em;
     font-weight:400;
+    font-size:10px;
+}
+
+div#app-topbar div.title-bar-right #frame-toggle{
+    font-size:12px;
 }
 
 div#app-topbar span#frame-toggle {
@@ -26,13 +31,13 @@ div#app-topbar span#frame-toggle {
 }
 div#app-topbar div.title-bar-right #share{
     width:150px;
-    margin-right:5px;
+    margin-right:10px;
 }
 
 div#app-topbar span#frame-toggle a {
     background-color: rgba(255, 255, 255, 0.0);
     color: white;
-    padding: 2px 6px 2px 6px;
+    padding: 3px 8px 3px 8px;
     text-align: center;
 }
 
@@ -84,8 +89,8 @@ div#app-topbar a.topbar-button.category.selected:hover {
 }
 
 a.button#modal-menu-button {
-    padding:15px 10px 25px 0px;
-    width:140px;
+    padding:18px 40px 5px 10px;
+    width:150px;
     height:51px;
     background-color: #404041;
 }
@@ -101,6 +106,8 @@ ul.menu#modal-menu {
 
 ul.menu#modal-menu a {
     color: white;
+    width:150px;
+    padding-bottom:15px;
 }
 
 ul.menu#modal-menu a:hover {

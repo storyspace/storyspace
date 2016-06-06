@@ -396,7 +396,7 @@ img {
 
 textarea {
   height: auto;
-  min-height: 50px;
+  min-height: 160px;
   border-radius: 0; }
 
 select {
@@ -1458,13 +1458,13 @@ kbd {
 textarea {
   display: block;
   box-sizing: border-box;
-  width: 100%;
-  height: 2.4375rem;
+  width: 98%;
+  height: 1.8rem;
   padding: 0.5rem;
-  border: 1px solid #cacaca;
+  border: 0px solid #cacaca;
   margin: 0 0 1rem;
   font-family: inherit;
-  font-size: 1rem;
+  font-size: .8rem;
   color: #0a0a0a;
   background-color: #fefefe;
   box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
@@ -2448,7 +2448,7 @@ select {
   position: absolute;
   top: 0;
   left: 100%;
-  min-width: 200px;
+  min-width: 100px;
   z-index: 1;
   background: #fefefe;
   border: 1px solid #cacaca; }
